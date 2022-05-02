@@ -1,0 +1,37 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Apr  3 20:24:58 2022
+
+@author: Quantum Sage
+"""
+
+import numpy as np
+
+a=np.array([1,2,3])
+print(type(a)) #datatype
+print(a.shape) #displays dimension
+a1=np.zeros((2,2)) #creates a 0? matrix with the dimension
+b1=np.ones((2,2)) #creates a 1 matrix with the dimension
+c=np.full((2,2),5) #creates a matrix filled with 5 with that dimension
+d=np.random.random((2,2)) #creates a random matrix with the given dimension
+print(a,a1,b1,c,d)
+n=np.array((2,1),dtype=np.int64) #typecasted to int64 (integer with 64 bits)
+print(n.dtype)
+x=np.array([[1,2],[3,4]],dtype=np.float64)
+y=np.array([[5,6],[7,8]],dtype=np.float64)
+print(x+y) #only same dimension can be added
+print(np.add(x,y))
+print(x*y)
+print(np.multiply(x,y)) #multiplication
+print(np.sqrt(x)) #square root of x
+print(np.transpose(x))
+print(x.T) #this transpose only works on numpy arrays
+print(np.sum(x)) #adds items in the matrix
+print(np.sum(x,axis=0)) #sum of 1st column
+
+b=np.array([[1,2,3],[4,5,6]])
+
+print(np.sum(b,axis=1))  #adds the whole row 
+
+a=np.array([ [1,2,3], [4,5,6] ])
+print(a.shape)  #gives 2,3 cause each input acts as rows
