@@ -1,0 +1,198 @@
+import matplotlib.pyplot as plt #as means we can use plt instead of the full matplotlib.pyplot
+import random 
+import math
+import string
+import datetime
+import numpy #array package
+from PIL import Image
+import cv2 #CLAHE: contrast limited adaptive histogram equalisation
+import pandas as pd
+import nltk
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
+#no package??? USE pip to download it!6!!!!
+def fun():
+    print("something")
+answer=0
+a=10
+b=12
+b1=str(b)
+b=int(b1)
+a,b=b,a #they got a function for swap!
+for i in range(3):
+    answer+=1
+    print (answer)
+print(answer)
+t=input("Fuck u mate")
+print(t)
+c=3
+ds=5//2         #floor division!
+"""
+while(1) gives infinite loop!
+also python supports autogarbage collection
+"""
+while(c!=0):
+    for i in range(3):
+        c-=1
+        print (c)
+if(1==1): 
+    print("HA!")
+elif (1==0):    #important stuff bruh how did I miss it?
+    print("NA")
+print(69)
+print(math.fabs(-420.211)) #absolute value i.e mod of value (no negative sign)
+b=0
+for i in range(10):
+    b+=i
+print(b)
+lc=list(string.ascii_lowercase)
+uc=list(string.ascii_uppercase)
+ilc=lc.upper()
+iuc=uc.lower()
+print(ilc.isupper())
+print(iuc.islower())
+#empty arrays can be defined by array[]
+shopping=["Bread","Coffee","Sugar"] #o/p will be: Bread \n Coffee \n Sugar
+for item in shopping:
+    print (item)
+print(shopping) #o/p will be: ['Bread','Coffee','Sugar']
+shopping.append("Curd") #adds another element to the list
+#arrow keys can be used as command history like in minecraft
+shopping.insert(1,"Milk") #Bread Oil yada yada
+shopping.count("Milk") #counts the number of occurences
+len(shopping) #length duhh (also can be nested with 'for' for integer length instead of element picker)
+ages=[12,32,1,5,7,245,78,2,12,567,55,47,88] 
+print(ages[-1]) #prints last item!!!!!!
+r="Hey There!"
+print(list(r)) #will print ['H', 'e', 'y', ' ', 'T', 'h', 'e', 'r', 'e', '!']
+"""!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"""
+ages = list(set(ages))
+ages.sort() #broo thats hax
+ages.reverse() #bruh...
+ages.remove(12) #removes the first occurance of the item
+del ages[3] #removes the item on that index
+ages.replace("Milk","Scam") #replace(a,b) means replace a with b #l=l.replace(s[i]+s[i+1]+s[i+2],'_') replaces aaa with _
+ages.pop(1) #removes 2nd element
+print(ages.index(32)) #returns index of the element
+print(ages.index(32,2,6)) #returns index of element if present in between the given points #(item,start,end)
+#ages[start:end+1] .substring() but for arrays// also the indexes are of computer's perspective
+#ages and ages[:] gives the whole fucking thing (different than above and also both of them are different yes)
+#ages[3:] prints till the end (same with [:5] but range is 0-4) (default beginning index=0; end index= len(arr)
+#ages[:,:0] basically mean all the items from [i] and then 0-10 from [j]
+#there isnt any && theres just 'and'
+age2=sorted(ages) #sorted creates an entirely new list unlike sort which performs on the called list
+age2=sorted(ages,reverse=True) #descending order
+shp2=sorted(shopping,key=len) #sort using length as argument instead
+ages.clear() #deletes the whole thing
+#to join two arrays just use a '+' for ex: f1=[1,2,3] f2=[4,5,6] f3=f1+f2 i.e. [1,2,3,4,5,6]
+arr=list(1234567890)
+mid=5
+L=arr[:mid]
+R=arr[mid:]
+A=[1,2,3,4,5]
+B=A
+C=A[:]
+B[1]=0 #this change will be reflected to A as well cause it copies the memory location
+C[1]=9 #this change wont be reflected as values of A are getting copied instead of memory location
+"""XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"""
+def funcname(r): #defining function
+    for i in range(10):
+        print(i)
+
+#also for import they did something like this: from statistics import mean (at the top obv)
+#also this: from scipy import stats
+#m=stats.trim_mean(age,0.1) #trimming the mean with 10% 
+#imported matplotlib.pyplot as plt created an object(?) for the lib
+plt.plot([1,2,3,4])
+#python autogenerates x values for the plot
+plt.plot([1,2,3,4],[1,4,9,16]) #1,4,9,16 goes on side whereas 1,2,3,4 goes in the bottom of the graph
+plt.ylabel("Something") #label for the graph that goes on to the vertical line
+plt.plot([1,2,3,4],[1,4,9,16],'ro') #plots red dots instead of a line
+#also r-- prints red dashes and bs prints blue squares, g^ green triangles
+#import random for random
+rc=random.choice(shopping) #random choice from the list
+rnd=random.randint(1,5) #includes both 1 and 5
+rnd1=random.randrange(1,5) #includes both 1 to upper limit-1 so its 4 here
+rnd2=random.random() #produces random decimals between 0 and 1 ex: 0.4566543... upto 16th bit
+rnd3=random.randrange(1,10,2) #produces random odd numbers between 1 and 9 (10-1) and 2 is the steps it will jump so 1 is essentially clearing out fractions and just 1-10
+rnd4=random.randrange(2,11,2) #produces random even numbers
+jmb="".join(random.sample(shopping[1],len(shopping[1]))) #jumbling #something.join basically means it does its thing everytime it encounters that character
+#join is also iterative
+#with open("filename.txt","r") as myfile #r for read and w for write(deletes existing data) and r+ for read write (and no its not r+w) also a for appending stuff to the end
+#print(myfile.read()) #prints the content in the file
+#myfile.write("Something") #writes in the file
+#gotta close the whole file shenanigans with myfile.close()
+li=list("0101010") #converts string or whatever to array
+ac1=string.ascii_lowercase
+ac2=string.ascii_uppercase
+asc=string.ascii_letters #converts ascii sequence into a string 
+print([i**2 for i in range(10) if(i%2==0)]) #single line for loop and condition check
+month=2
+day=22
+year=2002
+dd=datetime.date(year,month,day)
+day_of_year=dd.timetuple().tm_yday 
+a={1:1,2:2,3:3} #only for latest version otherwise just use a fucking loop
+b={4:4,5:5,6:6}
+a=a|b #joins two dictionaries
+max_i=max(a,key=a.get)
+diction={}
+diction.clear()
+for i in range(len(string.ascii_letters)):
+    diction[string.ascii_letters[i]]=string.ascii_letters[i-5]
+with open("iptext.txt") as f: #open(file,mode) 
+    c=f.read()
+#the modes: r (default): reads, a: appends (creates a new file if name is nonexistant)
+#   w: writes a file or creates a new if name nonexistant, x: creates a file with name (error if alr exists)
+board=numpy.array([["-","-","-"],["-","-","-"],["-","-","-"]])  #intentional number of sq brackets
+print(numpy.matrix(board)) #prints it in a row-column format instead of ['-' '-' '-' '-' '-' '-' '-' '-' '-']
+img=Image.open("C:\\Users\\Quantum Sage\\Desktop\\python\\images.jpg") #double slash is necessary apparently
+img.show()
+img.transpose(Image.FLIP_LEFT_RIGHT)
+img.save('transposed.png')
+im=cv2.imread('transposed.png')
+clahe=cv2.createCLAHE()
+gray_img=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+enh_img=clahe.apply(gray_img)
+cv2.imwrite("enchanced.png".enh_img)
+print("Done enhancing")
+f = open("test.txt")    # open file in current directory
+f = open("C:/User/Quantum Sage/Desktop/python/iptext.txt")  # specifying full path
+
+"""
+r	Opens a file for reading. (default)
+w	Opens a file for writing. Creates a new file if it does not exist or truncates the file if it exists.
+x	Opens a file for exclusive creation. If the file already exists, the operation fails.
+a	Opens a file for appending at the end of the file without truncating it. Creates a new file if it does not exist.
+t	Opens in text mode. (default)
+b	Opens in binary mode.
++	Opens a file for updating (reading and writing)
+
+Ex: f = open("test.txt",'w')
+"""
+ice_cream_flavour=("vanilla","chocolate","butterscotch","strawberry") #tuples are like lists but finite in size and faster than list cause set defined size
+icf=ice_cream_flavour[2] #butterscotch #index out of range incase number is more than the size
+#tuples cant be written!
+del ice_cream_flavour #deleted!
+ice_cream_flavour=("vanilla","chocolate","butterscotch","strawberry")
+ice_cream_flavour=("vanilla","chocolate","butterscotch","strawberry","wasabi") #redefining ice_cream_flavour i.e. destroying prev one and creating a new one with the same name
+licf=len(ice_cream_flavour)
+nicf=ice_cream_flavour.count("vanilla") #returns number of times that thing occurs
+print(ice_cream_flavour[-1]) #will print the last element as it loops back from 0 to max
+#tuples can be used in pixels 
+#float('inf') will return infinity (though idk how does python handles it)
+x="qwerty"
+a=3
+print(a*x) #prints x a number of times
+#you can check memory usage of an object using sys.getsizeof(x)
+#type(var) returns the type of the var
+ao=ord('a') #returns ascii value of the input
+oa=chr(ao) #returns characters from ascii value
+nltk.downloader.download('vader_lexicon')
+a1=[5,6,7]
+a,b,c=a1 #works somehow
+print(a,b,c) 
+x1=[1,2,3]
+x2=[4,5,6]
+x3=[[1,2,3],[4,5,6]]
+print(len(x3[0])) #len of 2d list
+
